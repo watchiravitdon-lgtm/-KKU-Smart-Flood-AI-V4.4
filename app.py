@@ -80,7 +80,7 @@ st.subheader("สถานีระดับน้ำล่าสุด")
 stations = water.get("stations_list", [])
 if stations:
     dfst = pd.DataFrame(stations)
-    showcols = [c for c in ["station_name","province","water_level","situation","rain_1h","rain_24h","updated_at","source_url"] if c in dfst.columns]
+    showcols = [c for c in ["station_name","source_url","province","water_level","situation","rain_1h","rain_24h","updated_at"] if c in dfst.columns]
     st.dataframe(dfst[showcols], use_container_width=True, hide_index=True,
                  column_config={
                      "source_url": st.column_config.LinkColumn(
